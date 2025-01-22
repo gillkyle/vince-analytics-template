@@ -1,0 +1,24 @@
+{
+  "name": "Vince Analytics",
+  "services": [
+    {
+      "name": "vince-analytics",
+      "type": "container",
+      "source": {
+        "type": "image",
+        "image": "ghcr.io/vinceanalytics/vince"
+      },
+      "config": {
+        "port": 8080,
+        "envVars": {
+          "VINCE_ADMIN_NAME": {
+            "fromServiceEnvVar": "VINCE_ADMIN_NAME"
+          },
+          "VINCE_ADMIN_PASSWORD": {
+            "fromServiceEnvVar": "VINCE_ADMIN_PASSWORD"
+          }
+        }
+      }
+    }
+  ]
+}
